@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!-- Small online Course>
+     -->
+<html lang = "en">
+<head> 
+    <title>Flight</title>
+    <meta charset = "utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> <! ----font api ---->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/flight.css">
+   <script type = "text/javascript"  src = "flight.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#oneWay").click(function(){
+  	$("#arrivalCalendar").hide();
+    });
+    
+   $("#roundTrip").click(function(){
+  	$("#arrivalCalendar").show();
+    }); 
+});
+</script>
+</head>
+        <header>
+         <!-- <h3 class="title">Your Travel Partner !!!</h3> -->
+       
+        </header>
+<body>
+    <div class="menu-bar">
+    <ul>
+        <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="registration.html"><i class="fa fa-user"></i>Registration</a></li>
+        <li  class="active"><a href="flight.html"><i class="fa fa-plane"></i>Flight</a></li>
+        <li><a href="hotel.html"><i class="fa fa-hotel"></i>Hotels</a></li>
+        <li><a href="restaurant.html"><i class="fa fa-cutlery"></i>Restaurant</a></li>
+
+    </ul>
+    </div>
+	
+	 
+	<br>
+    <!-===== Main body starts here =====->
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-md-6">
+        <form name ="flight" id="flightTicket" action="">
+            <div class="form-header">
+                <h3>Searching your ticket..</h3>
+            </div>
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input class="form-check-label" type="radio" name="trip" id="roundTrip" checked>Round Trip
+                </label>
+                <label class="radio-inline">
+                    <input class="form-check-label" type="radio" name="trip" id="oneWay" >One Way
+                </label>
+            </div>
+            
+            <!-====Departure & Arrival =====-->
+            
+            
+        <div class="input-container">
+            <i class="fa fa-plane icon" style="font-size:16px;">&nbsp  &nbsp &nbsp  &nbsp<span>From</span></i>
+            <select name="departureCity" id="departureCity">
+                    <option value="select">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbsp Select</option>
+
+                    <option value="jfk">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbsp John &nbsp Federick &nbsp Kennedy &nbsp International &nbspAirport,&nbsp New York ,&nbspUSA &nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp </option>
+                    <option value="doha">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbspDoha International Airport, Qatar</option>
+                    <option value="london">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbspHeadtrhow International Airport, London</option>
+                    <option value="tokyo">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbspTokyo International Airport, Japan</option>
+                    <option value="kathmandu">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbspTribhuvan International Airport, Nepal</option>
+                    <option value="newark">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbspNewark International Airport, Newark</option>
+                    <option value="la">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbsp LA International Airport, Los Angeles Y</option>
+                </select>
+        </div>
+        <div class="input-container">
+            <i class="fa fa-plane icon" style="font-size:16px">&nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp<span>To</span></i>
+            <select name="arrivalCity" id="arrivalCity">
+                    <option value="select">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbsp Select</option>
+
+                    <option value="jfk">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbsp John &nbsp Federick &nbsp Kennedy &nbsp International &nbspAirport,&nbsp New York ,&nbspUSA &nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp </option>
+                    <option value="doha">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbspDoha International Airport, Qatar</option>
+                    <option value="london">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbspHeadtrhow International Airport, London</option>
+                    <option value="tokyo">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbspTokyo International Airport, Japan</option>
+                    <option value="kathmandu">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbspTribhuvan International Airport, Nepal</option>
+                    <option value="newark">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbspNewark International Airport, Newark</option>
+                    <option value="laguardia">&nbsp  &nbsp  &nbsp &nbsp &nbsp &nbspLaguardia Airport, Queens, New York</option>
+                </select>
+        </div>
+            
+        <!=== Calender =====-->   
+        <div class="input-container">
+            <div id="departureCalendar">   
+                <i class="fa fa-calendar icon"><span>&nbsp &nbsp Depart &nbsp  &nbsp</span></i>
+                <input class="input-field" type="date" placeholder="mm/dd/yy" min="new Date()" name="departureDate">&nbsp 
+            </div> &nbsp &nbsp &nbsp &nbsp    
+                <div id="arrivalCalendar" >
+                    <i class="fa fa-calendar icon">&nbsp  &nbsp<span>Arrival</span></i>
+                    <input class="input-field" id="arrivalDate" type="date" placeholder="mm/dd/yy" name="arrivalDate"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                </div>    
+         </div>
+            
+            <div class="input-container">
+                <i class="icon"><span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Adult &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp</span></i>
+                <select name="adult" id="adult">
+                    <option value="zero">0</option>
+                    <option value="one">1</option>
+                    <option value="two">2</option>
+                    <option value="three">3</option>
+                    <option value="four">4</option>
+                    <option value="five">5</option>
+                    <option value="six">6</option>
+                </select>&nbsp&nbsp
+                
+                <i class="icon"><span> &nbsp &nbsp &nbsp &nbsp Children (2-11)&nbsp &nbsp &nbsp &nbsp &nbsp</span></i>
+                <select name="children" id="children">&nbsp &nbsp
+                    <option value="zero">0</option>
+                    <option value="one">1</option>
+                    <option value="two">2</option>
+                    <option value="three">3</option>
+                    <option value="four">4</option>
+                    <option value="five">5</option>
+                    <option value="six">6</option>
+                </select>&nbsp
+                <i class="icon"><span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Infants &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp</span></i>
+                <select name="infants" id="infants">&nbsp &nbsp&nbsp
+                    <option value="zero">0</option>
+                    <option value="one">1</option>
+                    <option value="two">2</option>
+                    <option value="three">3</option>
+                    <option value="four">4</option>
+                    <option value="five">5</option>
+                    <option value="six">6</option>
+                </select>&nbsp
+            </div>
+             <div class="input-container">
+
+                <i class="icon"><span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Class &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp</span></i>
+                <select name="coach" id="coach">&nbsp &nbsp&nbsp
+                    <option value="economic" selected>Economy</option>
+                    <option value="business">Business</option>
+                    <option value="first ">First </option>
+                    
+                </select>
+                
+            </div>
+            
+            
+            <!--Search Button-->
+            
+             <div class="form-group">
+                <input type="reset" class="form-button" value="Refresh" onclick="refresh  ()">
+            </div>
+                
+        </form>
+    </div><!--/.wrap-->
+      
+   
+    <div class="col-md-6" style="background-color:pink;">
+      
+    <h1 style="text-align: center">Results</h1>
+    <div id="result"></div>
+    <div class="form-group">
+        <button class="form-button" type="submit" onclick="search()">Search</button>
+    </div> 
+        
+        
+        
+        
+    <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Buy</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Your Ticket</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+              <label>First Name: <input type="text"></label><br>
+            <label>Last Name: <input type="text"></label><br>
+            <label>Amount: <input type="text" value ="$2000"></label><br>
+
+            <label>Card Number: <input type="text"></label><br>
+            <label>Expiration Date: <input type="text"></label><br>
+            <label>CVV: <input type="text"></label><br>
+
+
+
+
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="confirm()">Confirm</button>
+        </div>
+      </div>
+      
+    </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+      
+</div>
+</div>
+   <br>
+    
+    
+    
+    <!- ===== footer goes here ==== ->
+	
+	 <footer>
+        <div class="footer-wrap">
+            <h2>Let's Keep in Touch!</h2>
+            
+            <!-- Social media and contact links. Add or remove any networks. -->
+            <div class="footer-info">
+                <a href="mailto:email@example.com">email@example.com</a>
+                <a href="http://yourwebsite.com" target="_blank">yourwebsite.com</a>
+                <a href="#" target="_blank">Twitter</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Facebook</a>
+            </div>
+
+            <p>Copyright 2019 &nbsp &nbsp  <a href =#index.html>www.travelworld.com</a></p>
+        </div>    
+    </footer>
+  </body>
+</html>

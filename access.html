@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- Small online Course>
+     -->
+<html lang = "en">
+<head> 
+    <title>Sign In </title>
+    <meta charset = "utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/access.css">
+ 
+</head>
+    
+<body>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>    
+    <br>
+    
+    
+    <!--****** Login Form ********---->
+ <div class="container" style="background-color:#ccc;">
+        <div class="wrap">
+        <form name ="loginForm" id="loginForm" action="">
+            <div class="form-header">
+                <h3>Login Form</h3>
+                <p>Login to Travel World</p>
+            </div>
+            <!--Email Input-->
+            <div class="form-group">
+                <input type="text" class="form-input"  id="username" placeholder="User Name" autocomplete="off" autofocus>
+            </div>
+            <!--Password Input-->
+            <div class="form-group">
+                <input type="password" class="form-input" id ="password" placeholder="password" autocomplete="off">
+            <span id="errorMessage" class="error"></span>  
+                
+            </div>
+            <!--Login Button-->
+            <div class="form-group">
+                <button class="form-button" type="submit" onclick="getInfo()">Login</button>
+            </div>
+             <div class="form-group">
+                <input type="button" class="form-button" value=" Not a member Sign Up" onclick="signUp()">
+            </div>  
+        </form>
+    </div><!--/.wrap-->
+  </div>
+</div>
+
+
+<!==== login javascript =====>
+    
+    <script>
+        
+    
+    var dumpUser=JSON.parse(localStorage.getItem('infoArray'));
+        //console.log(dumpUser);
+        var objectLength=Object.keys(dumpUser).length;
+
+                //console.log(dumpUser.firstName);
+                //console.log(dumpUser.password);
+
+
+    function getInfo(){
+        
+        var username=document.getElementById("username").value
+        //console.log(username);
+        var password=document.getElementById("password").value
+        //console.log(password);
+    
+        for (var i = 0; i<objectLength;i++){
+        if (username == dumpUser[i][2] && password == dumpUser[i][3]){
+            //alert("Congratulation! ")
+            window.open("index.html");
+            return
+        }
+    }
+        
+alert("Invalid User name or passowrd!");
+    } 
+  
+  /*  locally     
+    var objPeople = [
+    {
+        username: "admin",
+        password: "admin"
+    },
+    {
+        username:"sam",
+        password:"abc123"
+    },
+    {
+        username:"test",
+        password:"test123"
+    }
+]
+
+    var username=document.getElementById("username").value
+    var password=document.getElementById("password").value
+    
+    for (var i = 0; i<objPeople.length;i++){
+        if (username==objPeople[i].username && password==objPeople[i].password){
+            alert("Congratulation! ")
+            window.open("index.html");
+            return
+        }
+    }
+        alert("Invalid passowrd")  
+ 
+
+}   */
+        
+        
+function signUp(){
+window.open("registration.html","_self");
+    return
+}
+
+
+    </script>
+    
+
+  </body>
+</html>

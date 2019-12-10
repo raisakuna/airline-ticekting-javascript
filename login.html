@@ -1,0 +1,380 @@
+<html lang = "en">
+<head> 
+    <title>Registration</title>
+    <meta charset = "utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> <! ----font api ---->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+</head>
+    <header>
+    
+    </header>
+<body>
+    <div class="menu-bar">
+    <ul>
+        <li ><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+        <li class="active"><a href="#"><i class="fa fa-user"></i>Registration</a></li>
+        <li><a href="#"><i class="fa fa-plane"></i>Flight</a></li>
+        <li><a href="hotel.html"><i class="fa fa-hotel"></i>Hotels</a> </li>
+        <li><a href="restaurant.html"><i class="fa fa-cutlery"></i>Restaurant</a></li>
+
+    </ul>
+    </div> 
+   
+<! =====Registration form layout=========>
+
+<br><br>
+    
+<div class="container">
+  <form action="#" id="myForm">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="firstname" name="firstname" autocomplete="off" placeholder="Your name.." autofocus>
+        <span id="firstNameError" class="error"></span>  
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lastname" name="lastname" autocomplete="off"  placeholder="Your last name..">
+                  <span id="lastNameError" class="error"></span>  
+
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-25">
+        <label for="email">Email</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="email" name="email" autocomplete="off" placeholder="mail@gmail.com">
+                  <span id="emailError" class="error"></span>  
+          
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-25">
+        <label for="password">Password</label>
+      </div>
+      <div class="col-75">
+        <input type="password" id="password" name="password" autocomplete="off" placeholder="Password..">
+                  <span id="passwordError" class="error"></span>  
+          
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-25">
+        <label for="conpassword">Confirm Password</label>
+      </div>
+      <div class="col-75">
+        <input type="password" id="conpassword" name="conpassword" autocomplete="off" placeholder="Retype Password..">
+                  <span id="confirmPasswordError" class="error"></span>  
+          
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-25">
+        <label for="number">Contact No</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="phoneNumber" name="number" autocomplete="off" placeholder="Only number..   ">
+        <span id="numberError" class="error"></span>  
+          
+      </div>
+    </div>
+   
+   
+      <div class="row">
+      <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country" required>
+          <option value="australia" >Select</option>
+          <option value="australia" name="australia">Australia</option>
+          <option value="canada" name="canada">Canada</option>
+          <option value="usa" name="usa">USA</option>
+          <option value="uk" name="uk">United Kingdom</option>
+          <option value="china" name="china">China</option>
+          <option value="india" name="india">India</option>    
+        </select>
+      </div> 
+          <span id="countryError" class="error"></span> 
+    </div> 
+    
+              
+    <div>
+        <input type="checkbox" name ="terms"> &nbsp &nbsp
+  
+    By creating an acount you agree to our <a href="https://policies.google.com/terms?hl=en-US" "required">Terms and Condition</a> 
+      </div>  
+      
+    <div class="row">
+        <div><input type="reset"  value="Reset" onclick="window.location.reload()"></div>
+        <div><input type="submit" value="Submit" onclick="registerUser()"></div>
+    </div>
+    <p>Already a member<a href="access.html"    >Sign in</a></p>  
+      
+  </form>   
+</div>
+    <br><br>
+       
+
+
+
+    
+<!-- ====Footer & contact info ====-->
+    
+    <footer>
+        <div class="footer-wrap">
+            <h2>Let's Keep in Touch!</h2>
+            
+            <!-- Social media and contact links. Add or remove any networks. -->
+            <div class="footer-info">
+                <a href="mailto:email@example.com">email@example.com</a>
+                <a href="http://yourwebsite.com" target="_blank">yourwebsite.com</a>
+                <a href="#" target="_blank">Twitter</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Facebook</a>
+            </div>
+
+            <p>Copyright 2019 &nbsp &nbsp  <a href =#index.html>www.travelworld.com</a></p>
+        </div>    
+    </footer> 
+    
+    
+    <! ====Form Validation ===== >
+    <script>
+                
+        const myForm = document.getElementById('myForm');
+        const firstName = document.getElementById('firstname');
+        const lastName = document.getElementById('lastname');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('conpassword');
+        const number = document.getElementById('phoneNumber');
+        const selectCountry=document.getElementById('country');
+
+
+// ***== Form Validation =======
+//myForm.addEventListener('submit', printEvent);
+
+//=== firstName Validation
+        
+    firstName.addEventListener('blur', firstNameValidation);
+    function firstNameValidation(e) {
+    
+    if(firstName.value.length==0){
+    document.getElementById('firstNameError').innerHTML="** Please Enter your First Name"; 
+    return true;
+    }
+    
+     {  
+      var fname = /^[A-Za-z]+$/;
+      if(firstName.value.match(fname))
+      {    
+    document.getElementById('firstNameError').innerHTML=" "; 
+
+      return true;
+      }
+      else
+      {
+    document.getElementById('firstNameError').innerHTML="** Please Enter characters only"; 
+      return false;
+      }
+    }
+        
+        e.preventDefault();
+         }
+        
+// === last Name Validation ==== 
+        
+    lastName.addEventListener('blur', lastNameValidation);
+    function lastNameValidation(e) {
+    
+    if(lastName.value.length==0){
+    document.getElementById('lastNameError').innerHTML="** Please Enter your Last Name"; 
+    return true;
+    }
+    
+     {  
+      var lname = /^[A-Za-z]+$/;
+      if(lastName.value.match(lname))
+      {    
+    document.getElementById('lastNameError').innerHTML=" "; 
+
+      return true;
+      }
+      else
+      {
+    document.getElementById('lastNameError').innerHTML="** Please Enter characters only"; 
+      return false;
+      }
+    }
+        
+    e.preventDefault();
+     } 
+        
+// === email Validation ==== 
+        
+    email.addEventListener('blur', emailValidation);
+    function emailValidation(e) {
+    
+    if(email.value.length==0){
+    document.getElementById('emailError').innerHTML="** Please Enter your email address"; 
+    return true;
+    }
+    
+     {  
+      var checkEmail =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if(email.value.match(checkEmail))
+      {    
+    document.getElementById('emailError').innerHTML=" "; 
+
+      return true;
+      }
+      else
+      {
+    document.getElementById('emailError').innerHTML="** Invalid email address:  email@email.com"; 
+      return false;
+      }
+    }
+        
+    e.preventDefault();
+     } 
+        
+// === password Validation ==== 
+        
+    password.addEventListener('blur', passwordValidation);
+    function passwordValidation(e) {
+    
+    if(password.value.length==0){
+    document.getElementById('passwordError').innerHTML="** Please Enter your passowrd"; 
+    return true;
+    }
+    
+     {  
+      var checkPassword = /^[A-Za-z]\w{7,14}$/;
+      if(password.value.match(checkPassword))
+      {    
+    document.getElementById('passwordError').innerHTML=" "; 
+
+      return true;
+      }
+      else
+      {
+    document.getElementById('passwordError').innerHTML="** Your password must contain 7-14 characters"; 
+      return false;
+      }
+    }
+        
+    e.preventDefault();
+     }       
+        
+        
+// === Confirm password Validation ==== 
+        
+    confirmPassword.addEventListener('blur', confirmPasswordValidation);
+    function confirmPasswordValidation(e) {
+    
+    if(confirmPassword.value.length==0){
+    document.getElementById('confirmPasswordError').innerHTML="** Please Confirm your passowrd"; 
+    return true;
+    }
+    
+     {  
+      
+      if(confirmPassword.value.match(password.value))
+      {    
+    document.getElementById('confirmPasswordError').innerHTML=" "; 
+
+      return true;
+      }
+      else
+      {
+    document.getElementById('confirmPasswordError').innerHTML="** Your password do not match"; 
+      return false;
+      }
+    }
+        
+    e.preventDefault();
+     } 
+        
+// === Number Validation ==== 
+        
+    number.addEventListener('blur', contactNumberValidation);
+    function contactNumberValidation(e) {
+    
+    if(number.value.length==0){
+    document.getElementById('numberError').innerHTML="** Please Enter your Phone number"; 
+    return true;
+    }
+    
+     {  
+      var phoneNumber =/^\d{3}-\d{3}-\d{4}$/;
+      if(number.value.match(phoneNumber.value))
+      {  
+        document.getElementById('numberError').innerHTML="** Invalid format"; 
+
+
+      return true;
+      }
+      else
+      {
+    document.getElementById('numberError').innerHTML=" "; 
+      return false;
+      }
+    }
+        
+    e.preventDefault();
+     }                
+
+// === Country Validation ==== 
+        
+    selectCountry.addEventListener('blur', countryValidation);
+    function countryValidation(e) {
+    
+    if(selectCountry.value.length==0){
+    document.getElementById('countryError').innerHTML="** Please Enter your Phone number"; 
+    return true;
+    }
+    e.preventDefault();
+     }                
+        
+        
+// ===== Storing in Local Storage =====        
+
+   var infoArray = [];
+        
+        function registerUser(){
+            
+           /* var fname=document.getElementById("firstname").value;
+            var lname=document.getElementById("lastname").value;
+            var email=document.getElementById("email").value;
+            var password=document.getElementById("password").value;
+            var conpassword=document.getElementById("conpassword").value;
+            var number=document.getElementById("phoneNumber").value; 
+            
+            var infoObj={firstName: fname, lastName:lname, email: email, password: password, confirmPassword: conpassword, contactNumber:number};*/
+            
+            var infoObj={firstName: firstName.value, lastname: lastName.value, email: email.value, password: password.value, confirm:confirmPassword.value,contactnumber:number.value,country:selectCountry.value};
+            
+            infoArray.push(infoObj);
+            localStorage.setItem('infoArray',JSON.stringify(infoObj));
+        }
+        
+        
+
+        
+       
+    </script>  
+  </body>
+</html> 

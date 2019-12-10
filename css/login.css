@@ -1,0 +1,237 @@
+*
+{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+
+}
+/* ----  header file ---*/
+
+header {
+	background-color:aliceblue;
+	background-image:url("1.png");
+	background-repeat:no-repeat;
+	background-position:right;
+	height:130px;
+    color:deepskyblue;
+    padding: 37px 40px;
+    font-size:40px;
+    border-radius: ;
+	}
+
+/* --geneal body --universal --- */
+body
+{
+    background-image: url(images%20/image.jpeg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+
+/*---Navigation Menu ----*/
+
+.menu-bar
+{
+    background: rgb(0,0,244);
+    text-align: center;
+}
+.menu-bar ul
+{
+    display: inline-flex;
+    color:#fff;
+    list-style: none;
+}
+.menu-bar ul li
+{
+    width: 140px;
+    margin: 15px;
+    padding: 15px;
+}
+.menu-bar ul li a
+{
+    text-decoration: none;
+    color: antiquewhite;
+}
+.active, .menu-bar ul li:hover
+{
+    background-color: deepskyblue;
+    border-radius:3px;
+}
+.menu-bar .fa
+{
+    margin-right: 8px;
+}
+
+.sub-menu1
+{
+    display: none;
+}
+
+.menu-bar ul li:hover .sub-menu1
+{
+    display: block;
+    position: absolute;
+    background: rgb(0,0,244);
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.menu-bar ul li:hover .sub-menu1 ul
+{
+    display:block;
+    margin:10px;
+}
+.menu-bar ul li:hover .sub-menu1 ul li
+{
+    width:140px;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+    text-align: left;
+    background:transparent;
+    border-radius:0;
+}
+.menu-bar ul li:hover .sub-menu1 ul li:last-child
+{
+    border-bottom:none;
+}
+
+.menu-bar ul li:hover .sub-menu1 ul li a:hover
+{
+    color:darkblue;
+}
+.fa-angle-right
+{
+    float:right;
+}
+.sub-menu2
+{
+    display: none;
+}
+.hoverMe:hover .sub-menu2
+{
+    position: absolute;
+    display: block;
+    margin-left: 155px;
+    margin-top: -45px;
+    background: rgb(0,0,244);
+}
+
+/* --- Registration  Form   ----*/
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+    
+}
+.container form{
+  width:600px;    
+  border-radius: 5px;
+  padding: 20px;
+  margin:auto;
+    background: linear-gradient(#787ea1,#0000a1);
+    background: -webkit-linear-gradient(#787ea1,#0000a1);
+    background: -moz-linear-gradient(#787ea1,#0000a1);
+    background: -o-linear-gradient(#787ea1,#0000a1);
+    color:#fff;
+    font-size: 18px;
+  
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+.container form input[type="submit"],input[type="reset"] {
+  background-color: #1839FF;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+    margin :2px;
+    font-size:18px;
+}
+
+.container form input[type="submit"]:hover,input[type="reset"]:hover {
+  background-color: #0436EF;
+}
+.container form a{
+    color:skyblue;
+    text-decoration: none;
+}   
+
+.container form a:hover{
+    color:dodgerblue;
+    text-decoration: none;
+}   
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+
+/* ----Footer ----*/
+
+
+.footer-wrap{
+	max-width:950px;
+	margin:0 auto;
+	padding:30px;
+	overflow: auto;
+}
+footer{
+    background-color:#7A7AFC;
+	text-align:center;
+    color:aliceblue;
+}
+.footer-info a{
+	display:inline-block;
+	padding:10px;
+    text-decoration: none;
+    color:aliceblue;
+}
+.footer-info a:hover{
+	color:#fff;
+    font-size: 110%;
+}
+
+
+
